@@ -3,7 +3,7 @@ go:
   - 1.x
   - master
 install:
-  - go get -u github.com/golang/lint/golint
+  - go get -u golang.org/x/lint/golint
 before_script:
   - if [[ -n "$(go fmt ./...)" ]]; then exit 1; fi
   - golint -set_exit_status $(go list ./...)
