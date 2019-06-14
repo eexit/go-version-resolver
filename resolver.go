@@ -1,4 +1,4 @@
-package versionresolver
+package vresolver
 
 // Resolver is the type used for all resolvers
 type Resolver func(input string) string

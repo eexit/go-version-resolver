@@ -1,4 +1,4 @@
-package versionresolver
+package vresolver
 
 import (
 	"os"

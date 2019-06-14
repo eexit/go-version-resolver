@@ -1,4 +1,4 @@
-# versionresolver [![Build Status](https://travis-ci.org/eexit/versionresolver.svg?branch=master)](https://travis-ci.org/eexit/versionresolver)
+# V(ersion) Resolver [![Build Status](https://travis-ci.org/eexit/vresolver.svg?branch=master)](https://travis-ci.org/eexit/vresolver) [![codecov](https://codecov.io/gh/eexit/vresolver/branch/master/graph/badge.svg)](https://codecov.io/gh/eexit/vresolver)
 
 Simple and flexible way to fetch your app version.
 
@@ -11,17 +11,17 @@ Supported resolvers:
 - Fallback
 - Composite
 
-Example:
+### Example
 
 ```go
-import "github.com/eexit/versionresolver"
+import "github.com/eexit/vresolver"
 
 // Tries to fetch the version from the runtime ECS container
 // and fallbacks to "bulk-version" otherwise
-version := versionresolver.Compose(
-	versionresolver.Env,
-	versionresolver.ECS,
-	versionresolver.Fallback("bulk-version"),
+version := vresolver.Compose(
+	vresolver r.Env,
+	vresolver.ECS,
+	vresolver.Fallback("bulk-version"),
 )("ECS_CONTAINER_METADATA_FILE")
 
 ```
@@ -29,7 +29,13 @@ version := versionresolver.Compose(
 ## Installation
 
 ```bash
-$ go get -u github.com/eexit/versionresolver
+$ go get -u github.com/eexit/vresolver
+```
+
+## Test
+
+```bash
+$ go test -v -race ./...
 ```
 
 ## Custom resolver
@@ -51,10 +57,7 @@ func Panic(input string) string {
 	return input
 }
 
-version := versionresolver.Compose(
-	versionresolver.Env,
-	Panic,
-)("MY_APP_VERSION")
+version := vresolver.Compose(vresolver.Env, Panic)("MY_APP_VERSION")
 ```
 
----
+

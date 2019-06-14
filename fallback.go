@@ -1,4 +1,4 @@
-package versionresolver
+package vresolver
 
 // Fallback is a resolver that returns a given fallback
 // value when input is empty
