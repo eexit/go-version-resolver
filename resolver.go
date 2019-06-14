@@ -4,6 +4,7 @@ package vresolver
 type Resolver func(input string) string
 
 // Compose allows to compose resolvers chained in a FILO fashion
+// Inspired by @fchoquet
 func Compose(resolvers ...Resolver) Resolver {
 	return func(input string) string {
 		if len(resolvers) == 0 {
