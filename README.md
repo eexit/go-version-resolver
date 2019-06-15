@@ -22,7 +22,7 @@ version := vresolver.Compose(
 	vresolver r.Env,
 	vresolver.ECS,
 	vresolver.Fallback("bulk-version"),
-)("ECS_CONTAINER_METADATA_FILE")
+)(vresolver.ECSMetadataFileEnvVar)
 
 ```
 

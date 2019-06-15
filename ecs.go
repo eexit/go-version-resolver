@@ -6,6 +6,10 @@ import (
 	"strings"
 )
 
+// ECSMetadataFileEnvVar contains the default env var
+// name that points to the container metadata file
+const ECSMetadataFileEnvVar = "ECS_CONTAINER_METADATA_FILE"
+
 // ECS extracts the tag of the Docker image in use.
 // See AWS ECS Container Metadata File: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-metadata.html
 func ECS(file string) string {
