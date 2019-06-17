@@ -19,7 +19,7 @@ import "github.com/eexit/vresolver"
 // Tries to fetch the version from the runtime ECS container
 // and fallbacks to "bulk-version" otherwise
 version := vresolver.Compose(
-	vresolver r.Env,
+	vresolver.Env,
 	vresolver.ECS,
 	vresolver.Fallback("bulk-version"),
 )(vresolver.ECSMetadataFileEnvVar)
